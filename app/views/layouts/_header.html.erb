@@ -1,0 +1,10 @@
+<header>
+  <%= link_to 'Proyecto 2', root_path %>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>User</li>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+    </ul>
+  </nav>
+</header>
