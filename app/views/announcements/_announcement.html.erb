@@ -1,5 +1,16 @@
-<%= link_to announcement do %>
-  <div class="announcement container py-3 border border-secondary border-opacity-25">
+<% seen_announcement=current_user.seen_announcements.find_by(announcement_id: announcement.id)%>
+<% if seen_announcement %>
+  <% if seen_announcement.seen %>
+    <% background_color = ""  %>
+  <% else %>
+    <% background_color = "bg-info"  %>
+  <% end %>
+<% else %>
+  <% background_color = "bg-info" %>
+<% end %>  
+
+<%= link_to announcement, class: "text-decoration-none text-black" do %>
+  <div class="announcement container py-3 border border-secondary border-opacity-25 <%= background_color %>">
     <div class="d-flex gap-3">
       <p class="fw-bold m-0"><%= User.find(announcement.user_id).full_name %></p>
       <p class="text-secondary m-0"><%= announcement.custom_time %></p>
