@@ -1,5 +1,9 @@
 class Announcement < ApplicationRecord
   belongs_to :user
+
+  has_many :seen_announcements
+  has_many :users, through: :seen_announcements
+
   validates :content, length: { maximum: 140 }, presence: true
 
   def custom_time

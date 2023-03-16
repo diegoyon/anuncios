@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :announcements
 
+  has_many :seen_announcements
+  has_many :announcements, through: :seen_announcements
+
   def full_name
     "#{name} #{last_name}"
   end

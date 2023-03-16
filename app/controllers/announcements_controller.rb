@@ -4,6 +4,14 @@ class AnnouncementsController < ApplicationController
     # @announcements = Announcement.all.order(created_at: :desc)
   end
 
+  def show
+    @announcement = Announcement.find(params[:id])
+
+    @seen_announcement = current_user.seen_announcements.find_by(announcement_id: @announcement.id)
+    # debugger
+    @seen_announcement ||= SeenAnnouncement.new
+  end
+
   def new
     @announcement = Announcement.new
   end
@@ -18,9 +26,17 @@ class AnnouncementsController < ApplicationController
     end
   end
 
+  def mark_seen
+    announcement = Announcement.find(params[:id])
+    current_user.seen_announcements.create(announcement: announcement, seen: true)
+    redirect_to announcements_path
+  end
+
   private
 
   def announcement_params
     params.require(:announcement).permit(:content).with_defaults(user_id: current_user.id)
   end
+
+  
 end

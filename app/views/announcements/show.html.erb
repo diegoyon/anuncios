@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Announcement</h1>
+  <%= @announcement.content %>
+  
+  <%= form_with model: @seen_announcement do |f| %>
+    <% if @seen_announcement.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+        <% @seen_announcement.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= f.number_field :announcement_id, value: @announcement.id %>
+    </div>
+
+    <div>
+      <%= f.check_box :seen %>
+    </div>
+
+    <div>
+      <%= f.submit "Save", class: "btn btn-primary mt-3" %>
+    </div>
+  <% end %>
+</div>
