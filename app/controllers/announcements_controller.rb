@@ -19,7 +19,7 @@ class AnnouncementsController < ApplicationController
   def create
     @announcement = Announcement.new(announcement_params)
     if @announcement.save
-      flash[:success] = "Announcement successfully created."
+      flash[:notice] = "Announcement successfully created."
       redirect_to announcements_path
     else
       render :new, status: :unprocessable_entity

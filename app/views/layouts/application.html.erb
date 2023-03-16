@@ -12,12 +12,16 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-    <%#= debug(params) if Rails.env.development? %>
+    <main class="container">
+      <% flash.each do |message_type, message| %>
+        <% if message_type == 'notice' %>
+          <div class="alert alert-success"><%= message %></div>
+        <% else %>
+          <div class="alert alert-danger"><%= message %></div>
+        <% end %>
+      <% end %>
+      <%= yield %>
+      <%#= debug(params) if Rails.env.development? %>
+    </main>
   </body>
 </html>

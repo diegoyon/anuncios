@@ -3,7 +3,7 @@ class SeenAnnouncementsController < ApplicationController
     # debugger
     @seen_announcement = SeenAnnouncement.new(seen_announcement_params)
     if @seen_announcement.save
-      flash[:success] = "Mark as read."
+      flash[:notice] = "Mark as read."
       redirect_to announcements_path
     else
       render :new, status: :unprocessable_entity
