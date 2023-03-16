@@ -4,17 +4,15 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def after_sign_in_path_for(*)
+  def after_sign_in_path_for(resource)
     announcements_path
   end
 
-  # def after_sign_up_path_for(*)
+  # def after_sign_up_path_for(resource)
   #   announcements_path
   # end
 
   def configure_permitted_parameters
-    # devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :last_name, :email, :password)}
-    # devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :last_name, :email, :password, :current_password)}
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :last_name])
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :last_name])
   end

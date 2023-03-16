@@ -1,6 +1,7 @@
 <div class="container">
-  <p><%= announcement.id %></p>
+  <div class="d-flex gap-3">
+    <p class="fw-bold"><%= User.find(announcement.user_id).full_name %></p>
+    <p class="text-secondary"><%= announcement.custom_time %></p>
+  </div>
   <p><%= announcement.content %></p>
-  <p><%= announcement.user_id %></p>
-  <p><%= announcement.created_at %></p>
 </div>
