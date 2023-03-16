@@ -1,3 +1,8 @@
-<h1>Profile</h1>
-<%= current_user.full_name %>
-<%#= link_to "Edit", edit_user_registration_path, class: "nav-link" %>
+<div class="container">
+  <h1>Profile</h1>
+  <div>
+    <p><span class="fw-semibold">Name:</span> <%= current_user.name %></p>
+    <p><span class="fw-semibold">Last name:</span> <%= current_user.last_name %></p>
+  </div>
+  <%#= link_to "Edit", edit_user_registration_path, class: "nav-link" %>
+</div>
