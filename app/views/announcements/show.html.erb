@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Announcement</h1>
   <%= @announcement.content %>
-  
+
   <%= form_with model: @seen_announcement do |f| %>
     <% if @seen_announcement.errors.any? %>
       <div id="error_explanation">
@@ -14,7 +14,7 @@
     <% end %>
 
     <div>
-      <%= f.number_field :announcement_id, value: @announcement.id %>
+      <%= f.hidden_field :announcement_id, value: @announcement.id %>
     </div>
 
     <div>
