@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'user/show'
   # get 'splash/home'
-  get '/announcements', to: 'announcements#index'
+  # get '/announcements', to: 'announcements#index'
+  # get '/announcements/new', to: 'announcements#new'
+  resources :announcements, only: [:index, :new, :create]
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

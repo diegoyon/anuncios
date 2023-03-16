@@ -1,0 +1,20 @@
+<%= form_with model: @announcement do |f| %>
+   <% if @announcement.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @announcement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.text_field :content, class: "form-control", placeholder: "Start writing something great..." %>
+  </div>
+
+  <div>
+    <%= f.submit "Save", class: "btn btn-success mt-3" %>
+  </div>
+
+<% end %>
