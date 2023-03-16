@@ -1,7 +1,7 @@
-<div class="container">
+<div class="announcement container py-3 border border-secondary border-opacity-25">
   <div class="d-flex gap-3">
-    <p class="fw-bold"><%= User.find(announcement.user_id).full_name %></p>
-    <p class="text-secondary"><%= announcement.custom_time %></p>
+    <p class="fw-bold m-0"><%= User.find(announcement.user_id).full_name %></p>
+    <p class="text-secondary m-0"><%= announcement.custom_time %></p>
   </div>
-  <p><%= announcement.content %></p>
+  <p class="m-0"><%= announcement.content %></p>
 </div>
