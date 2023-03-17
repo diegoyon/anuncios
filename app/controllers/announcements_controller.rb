@@ -2,6 +2,7 @@ class AnnouncementsController < ApplicationController
   def index
     @announcements = Announcement.where("created_at >= ?", 1.day.ago).order(created_at: :desc)
     # @announcements = Announcement.all.order(created_at: :desc)
+    
   end
 
   def show

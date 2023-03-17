@@ -1,24 +1,36 @@
-# README
+# Proyecto 2 Hogaru
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Este es un proyecto donde el usuario puede crear su cuenta en la aplicación, hacer login en la app, crear anuncios que todos los usarios de la app puede ver y marcar anuncios como vistos. El proyecto está diponible en producción a través de Heroku.
 
-Things you may want to cover:
+## Stack
 
-* Ruby version
+- Ruby on Rails
+- Bootstrap
 
-* System dependencies
+## Live Demo
 
-* Configuration
+[Live Demo Link](https://diego-apps.herokuapp.com/)
 
-* Database creation
+## Diagrama de entidad-relación
 
-* Database initialization
+![Diagrama de entidad-relación](/diagrama.png)
 
-* How to run the test suite
+## Para correr el programa...
 
-* Services (job queues, cache servers, search engines, etc.)
+Para correr el programa sigue los siguientes pasos:
 
-* Deployment instructions
+- Abre la terminal.
+- Corre `git clone git@github.com:diegoyon/proyecto1.git` para crear una copia local del repositorio.
+- Corre `bundle install` para instalar todas las dependencias.
+- Corre `.bin/dev` para iniciar el servidor.
 
-* ...
+## Autor
+
+👤 **Diego Yon**
+
+- GitHub: [@diegoyon](https://github.com/diegoyon)
+- LinkedIn: [Diego Yon](https://www.linkedin.com/in/diego-yon/)
+
+## Reconocimientos
+
+- Hogaru

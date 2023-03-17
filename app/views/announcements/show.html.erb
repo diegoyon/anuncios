@@ -18,7 +18,7 @@
 
   <div>
     <%= f.label :seen? %>
-    <%= f.check_box :seen %>
+    <%= f.check_box :seen, onchange: "this.form.submit()" %>
   </div>
 
   <div>
