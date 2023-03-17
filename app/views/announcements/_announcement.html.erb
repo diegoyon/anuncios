@@ -1,16 +1,4 @@
-<% seen_announcement=current_user.seen_announcements.find_by(announcement_id: announcement.id)%>
-<% if seen_announcement %>
-  <% if seen_announcement.seen %>
-    <% background_color = ""  %>
-  <% else %>
-    <% background_color = "bg-info"  %>
-  <% end %>
-<% else %>
-  <% background_color = "bg-info" %>
-<% end %>  
-
-
-<div class="announcement container py-3 border border-secondary border-opacity-25 <%= background_color %> d-flex flex-row justify-content-between">
+<div class="announcement container py-3 border border-secondary border-opacity-25 <%= set_background_color(announcement) %> d-flex flex-row justify-content-between">
   <div>
     <div class="d-flex gap-3">
       <p class="fw-bold m-0"><%= User.find(announcement.user_id).full_name %></p>
@@ -31,7 +19,6 @@
       <%= f.check_box :seen, onchange: "this.form.submit()", class: "form-check-input" %>
     </div>
   <% end %>
-
 </div>
 
 
